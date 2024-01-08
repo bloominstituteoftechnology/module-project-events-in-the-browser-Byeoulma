@@ -2,7 +2,7 @@
 function moduleProject2() {
   // 👇 WORK WORK BELOW THIS LINE 👇
   let startTime = new Date().getTime() // Record start time
-
+  console.log(startTime)
   function getTimeElapsed() { // To be used at end of game to get elapsed time
     let currentTime = new Date().getTime()
     return currentTime - startTime
@@ -37,6 +37,13 @@ function moduleProject2() {
       row.appendChild(square)
       square.addEventListener('click', () => {
         // 👉 TASK 2 - Use a click handler to target a square 👈
+      if (!square.classList.contains('targeted')) {
+        //removes the highlight from the click on / 'targeted' square
+          document.querySelector('.targeted').classList.remove('targeted');
+          // adds it back to the current clicked on target
+          square.classList.add('targeted')
+      }
+      
       })
     }
   }
